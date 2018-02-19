@@ -1,7 +1,7 @@
-inherit gnome2
+inherit gnome.org meson
 
 NAME="gom"
-VERSION=0.3.2
+VERSION=0.3.3
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="GObject SQlite object mapper library"
@@ -11,8 +11,10 @@ complex queries upon that data."
 HOMEPAGE="https://wiki.gnome.org/Projects/Gom"
 
 PKG_NAMES="libgom1.0_0 libgom1.0-devel libgom1.0-doc girepository-Gom1.0"
-libgom1_0_0_CONTENTS="usr/bin/cyggom-1.0-0.dll usr/share/doc/ usr/share/locale/"
+libgom1_0_0_CONTENTS="	usr/bin/cyggom-1.0-0.dll usr/share/doc/"
 libgom1_0_devel_CONTENTS="usr/include/gom-1.0/ usr/lib/libgom-1.0.dll.a
 	usr/lib/pkgconfig/gom-1.0.pc"
 libgom1_0_doc_CONTENTS="usr/share/gtk-doc/html/gom/"
 girepository_Gom1_0_CONTENTS="usr/*/gir*-1.0/Gom-1.0.* usr/lib/python*/site-packages/gi/overrides/"
+
+CYGMESON_ARGS="-Denable-gtk-doc=true -Denable-introspection=true"
